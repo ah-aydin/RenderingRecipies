@@ -94,7 +94,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Core/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)OpenGLCore/;$(SolutionDir)Core/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -113,7 +113,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Core/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)OpenGLCore/;$(SolutionDir)Core/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -132,7 +132,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Core/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)OpenGLCore/;$(SolutionDir)Core/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -151,7 +151,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)Core/;</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(ProjectDir)OpenGLCore/;$(SolutionDir)Core/</AdditionalIncludeDirectories>
       <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
@@ -165,24 +165,26 @@
   <ItemGroup>
     <ClInclude Include="OpenGLCore\OpenGLContext.h" />
     <ClInclude Include="OpenGLCore\Core.h" />
-    <ClInclude Include="OpenGLCore\OpenGLIndexBuffer.h" />
-    <ClInclude Include="OpenGLCore\OpenGLProgram.h" />
-    <ClInclude Include="OpenGLCore\OpenGLShader.h" />
-    <ClInclude Include="OpenGLCore\OpenGLVertexArray.h" />
-    <ClInclude Include="OpenGLCore\OpenGLVertexBuffer.h" />
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLIndexBuffer.h" />
+    <ClInclude Include="OpenGLCore\Shaders\OpenGLProgram.h" />
+    <ClInclude Include="OpenGLCore\Shaders\OpenGLShader.h" />
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLVertexArray.h" />
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLVertexBuffer.h" />
     <ClInclude Include="OpenGLCore\OpenGLWindow.h" />
+    <ClInclude Include="OpenGLCore\Textures\Cubemap.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="OpenGLCore.cpp" />
     <ClCompile Include="OpenGLCore\OpenGLContext.cpp" />
     <ClCompile Include="OpenGLCore\Core.cpp" />
-    <ClCompile Include="OpenGLCore\OpenGLIndexBuffer.cpp" />
-    <ClCompile Include="OpenGLCore\OpenGLProgram.cpp" />
-    <ClCompile Include="OpenGLCore\OpenGLShader.cpp" />
-    <ClCompile Include="OpenGLCore\OpenGLVertexArray.cpp" />
-    <ClCompile Include="OpenGLCore\OpenGLVertexBuffer.cpp" />
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLIndexBuffer.cpp" />
+    <ClCompile Include="OpenGLCore\Shaders\OpenGLProgram.cpp" />
+    <ClCompile Include="OpenGLCore\Shaders\OpenGLShader.cpp" />
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLVertexArray.cpp" />
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLVertexBuffer.cpp" />
     <ClCompile Include="OpenGLCore\OpenGLWindow.cpp" />
+    <ClCompile Include="OpenGLCore\Textures\Cubemap.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>

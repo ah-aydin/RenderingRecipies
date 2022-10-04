@@ -24,22 +24,25 @@
     <ClInclude Include="OpenGLCore\Core.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLCore\OpenGLIndexBuffer.h">
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLIndexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLCore\OpenGLProgram.h">
+    <ClInclude Include="OpenGLCore\Shaders\OpenGLProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLCore\OpenGLShader.h">
+    <ClInclude Include="OpenGLCore\Shaders\OpenGLShader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLCore\OpenGLVertexArray.h">
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLVertexArray.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="OpenGLCore\OpenGLVertexBuffer.h">
+    <ClInclude Include="OpenGLCore\Buffers\OpenGLVertexBuffer.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="OpenGLCore\OpenGLWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="OpenGLCore\Textures\Cubemap.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -59,19 +62,22 @@
     <ClCompile Include="OpenGLCore\Core.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLCore\OpenGLIndexBuffer.cpp">
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLIndexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLCore\OpenGLProgram.cpp">
+    <ClCompile Include="OpenGLCore\Shaders\OpenGLProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLCore\OpenGLShader.cpp">
+    <ClCompile Include="OpenGLCore\Shaders\OpenGLShader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLCore\OpenGLVertexBuffer.cpp">
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLVertexBuffer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="OpenGLCore\OpenGLVertexArray.cpp">
+    <ClCompile Include="OpenGLCore\Buffers\OpenGLVertexArray.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="OpenGLCore\Textures\Cubemap.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

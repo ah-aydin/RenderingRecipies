@@ -1,7 +1,7 @@
 #pragma once
 
 #include <Core/VertexBuffer.h>
-#include "Core.h"
+#include "../Core.h"
 
 #include <vector>
 

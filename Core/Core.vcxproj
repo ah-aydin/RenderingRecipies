@@ -155,6 +155,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Core\Bitmap\Bitmap.h" />
     <ClInclude Include="Core\Core.h" />
     <ClInclude Include="Core\Event\Event.h" />
     <ClInclude Include="Core\Log\Log.h" />
@@ -163,6 +164,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Core.cpp" />
+    <ClCompile Include="Core\Bitmap\Bitmap.cpp" />
     <ClCompile Include="Core\Log\Log.cpp" />
     <ClCompile Include="Core\VertexBuffer.cpp" />
     <ClCompile Include="pch.cpp">

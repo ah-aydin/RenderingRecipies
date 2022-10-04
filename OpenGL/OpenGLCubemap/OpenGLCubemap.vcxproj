@@ -150,10 +150,6 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="res\shaderDuck.frag" />
-    <None Include="res\shaderDuck.vert" />
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\OpenGLCore\OpenGLCore.vcxproj">
       <Project>{50e1c739-1dd5-4dc9-9dc2-a3f37816e347}</Project>
     </ProjectReference>

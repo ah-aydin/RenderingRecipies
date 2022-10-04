@@ -3,6 +3,7 @@
 
 #include "pch.h"
 
+#include "Core/Bitmap/Bitmap.h"
 #include "Core/Core.h"
 #include "Core/Log/Log.h"
 #include "Core/Event/Event.h"

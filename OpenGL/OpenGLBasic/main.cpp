@@ -3,9 +3,9 @@
 #include <Core/Event/Event.h>
 #include <Core/Log/Log.h>
 #include <OpenGLCore/OpenGLWindow.h>
-#include <OpenGLCore/OpenGLProgram.h>
-#include <OpenGLCore/OpenGLVertexArray.h>
-#include <OpenGLCore/OpenGLVertexBuffer.h>
+#include <OpenGLCore/Shaders/OpenGLProgram.h>
+#include <OpenGLCore/Buffers/OpenGLVertexArray.h>
+#include <OpenGLCore/Buffers/OpenGLVertexBuffer.h>
 
 bool running = true;
 
