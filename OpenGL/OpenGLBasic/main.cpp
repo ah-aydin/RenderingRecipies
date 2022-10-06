@@ -36,7 +36,7 @@ int main()
 	windowProps.debug = true;
 #endif
 
-	Window window(windowProps);
+	VulkanWindow window(windowProps);
 	window.setEventCallback(std::bind(&EventListener::onEvent, &eventListener, std::placeholders::_1));
 
 	OpenGLProgram program("res/shader.vert", "res/shader.frag");

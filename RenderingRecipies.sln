@@ -11,6 +11,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Core", "Core\Core.vcxproj",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OpenGLCubemap", "OpenGL\OpenGLCubemap\OpenGLCubemap.vcxproj", "{B35C5EC9-C269-4D8E-A3D6-C84554378269}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VulkanCore", "Vulkan\VulkanCore\VulkanCore.vcxproj", "{0AA0A279-6E2A-4943-85EC-66B871688403}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "VulkanBasic", "Vulkan\VulkanBasic\VulkanBasic.vcxproj", "{67722D61-08C3-49EA-A92C-3D6F1535EC5B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -51,6 +55,22 @@ Global
 		{B35C5EC9-C269-4D8E-A3D6-C84554378269}.Release|x64.Build.0 = Release|x64
 		{B35C5EC9-C269-4D8E-A3D6-C84554378269}.Release|x86.ActiveCfg = Release|Win32
 		{B35C5EC9-C269-4D8E-A3D6-C84554378269}.Release|x86.Build.0 = Release|Win32
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Debug|x64.ActiveCfg = Debug|x64
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Debug|x64.Build.0 = Debug|x64
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Debug|x86.ActiveCfg = Debug|Win32
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Debug|x86.Build.0 = Debug|Win32
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Release|x64.ActiveCfg = Release|x64
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Release|x64.Build.0 = Release|x64
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Release|x86.ActiveCfg = Release|Win32
+		{0AA0A279-6E2A-4943-85EC-66B871688403}.Release|x86.Build.0 = Release|Win32
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Debug|x64.ActiveCfg = Debug|x64
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Debug|x64.Build.0 = Debug|x64
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Debug|x86.ActiveCfg = Debug|Win32
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Debug|x86.Build.0 = Debug|Win32
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Release|x64.ActiveCfg = Release|x64
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Release|x64.Build.0 = Release|x64
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Release|x86.ActiveCfg = Release|Win32
+		{67722D61-08C3-49EA-A92C-3D6F1535EC5B}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
