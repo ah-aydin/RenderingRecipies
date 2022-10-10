@@ -4,6 +4,6 @@
 #include "pch.h"
 
 #include "VulkanCore/Core.h"
+#include "VulkanCore/VulkanPipeline.h"
 #include "VulkanCore/VulkanContext.h"
 #include "VulkanCore/VulkanRenderer.h"
-

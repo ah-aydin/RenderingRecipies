@@ -23,39 +23,11 @@ VulkanRenderer::VulkanRenderer(VulkanWindow& window)
 
         VK_CALL(vkAllocateCommandBuffers(m_context->getDevice(), &allocInfo, m_commandBuffers.data()));
     }
-
-    LOG_INFO("\tCreating uniform buffers");
-    {
-        /*
-        VkDeviceSize bufferSize = sizeof(UniformBufferObject3D);
-
-        m_uniformBuffers.resize(VulkanSwapchain::MAX_FRAMES_IN_FLIGHT);
-        m_uniformBuffersMemory.resize(VulkanSwapchain::MAX_FRAMES_IN_FLIGHT);
-
-        for (size_t i = 0; i < VulkanSwapchain::MAX_FRAMES_IN_FLIGHT; ++i)
-        {
-            m_context->createBuffer(
-                bufferSize,
-                VK_BUFFER_USAGE_UNIFORM_BUFFER_BIT,
-                VK_MEMORY_PROPERTY_HOST_VISIBLE_BIT | VK_MEMORY_PROPERTY_HOST_COHERENT_BIT,
-                m_uniformBuffers[i],
-                m_uniformBuffersMemory[i]
-            );
-        }
-        */
-    }
-}
+ }
 
 VulkanRenderer::~VulkanRenderer()
 {
     LOG_INFO("Destroying vuklan renderer");
-    // Free uniform buffers
-    LOG_INFO("\tDestorying uniform buffers");
-    for (size_t i = 0; i < m_uniformBuffers.size(); ++i)
-    {
-        vkDestroyBuffer(m_context->getDevice(), m_uniformBuffers[i], nullptr);
-        vkFreeMemory(m_context->getDevice(), m_uniformBuffersMemory[i], nullptr);
-    }
 
     LOG_INFO("\tDestroying command buffers");
     vkFreeCommandBuffers(m_context->getDevice(), m_context->getCommandPool(), static_cast<uint32_t>(m_commandBuffers.size()), m_commandBuffers.data());
@@ -65,7 +37,7 @@ VulkanRenderer::~VulkanRenderer()
 void VulkanRenderer::recreateSwapchain()
 {
     vkDeviceWaitIdle(m_context->getDevice());
-    m_vulkanSwapchain.reset();
+    //m_vulkanSwapchain.reset();
     auto extent = m_window.getExtent();
     while (extent.width == 0 || extent.height == 0)
     {
@@ -103,7 +75,6 @@ void VulkanRenderer::recreateSwapchain()
 
 void VulkanRenderer::beginFrame(
     VkCommandBuffer& out_CommandBuffer,
-    VkDeviceMemory& out_UniformBufferMemory,
     int& out_CurrentImageIndex
 )
 {
@@ -129,7 +100,6 @@ void VulkanRenderer::beginFrame(
     VK_CALL(vkBeginCommandBuffer(commandBuffer, &beginInfo));
 
     out_CommandBuffer = commandBuffer;
-    out_UniformBufferMemory = getCurrentUniformBufferMemory();
 }
 
 void VulkanRenderer::endFrame(VkCommandBuffer commandBuffer)
@@ -170,7 +140,7 @@ void VulkanRenderer::beginSwapchainRenderPass(VkCommandBuffer commandBuffer)
 
     std::vector<VkClearValue> clearValues;
     clearValues.resize(2);
-    clearValues[0].color = { 0, 0, 0, 1 };
+    clearValues[0].color = { m_clearColor.x, m_clearColor.y, m_clearColor.z, m_clearColor.w };
     clearValues[1].depthStencil = { 1.0f, 0 };
 
     renderPassInfo.clearValueCount = static_cast<uint32_t>(clearValues.size());

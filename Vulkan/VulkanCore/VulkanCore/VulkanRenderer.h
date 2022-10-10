@@ -10,6 +10,8 @@
 #include <memory>
 #include <cassert>
 
+#include <glm/vec4.hpp>
+
 class VulkanRenderer
 {
 public:
@@ -28,12 +30,6 @@ public:
         return m_commandBuffers[m_currentFrameIndex];
     }
 
-    VkDeviceMemory getCurrentUniformBufferMemory() const
-    {
-        assert(m_isFrameStarted && "Cannot get uniform buffer memory when frame is not in progress");
-        return m_uniformBuffersMemory[m_currentFrameIndex];
-    }
-
     float getSwapchainAspectRatio()
     {
         return m_vulkanSwapchain->width() / (float)m_vulkanSwapchain->height();
@@ -45,16 +41,15 @@ public:
         return m_currentFrameIndex;
     }
 
-    const std::vector<VkBuffer>& getUniformBuffers() const { return m_uniformBuffers; }
-
     void beginFrame(
         VkCommandBuffer& out_CommandBuffer,
-        VkDeviceMemory& out_UniformBufferMemory,
         int& out_CurrentImageIndex
     );
     void endFrame(VkCommandBuffer commandBuffer);
     void beginSwapchainRenderPass(VkCommandBuffer commandBuffer);
     void endSwapchainRenderPass(VkCommandBuffer commandBuffer);
+
+    void setClearColor(float r, float g, float b, float a) { m_clearColor = glm::vec4(r, g, b, a); }
     
 private:
 
@@ -64,12 +59,11 @@ private:
 
     std::vector<VkCommandBuffer> m_commandBuffers;
 
-    std::vector<VkBuffer> m_uniformBuffers;
-    std::vector<VkDeviceMemory> m_uniformBuffersMemory;
-
     void recreateSwapchain();
 
     uint32_t m_currentImageIndex;
     int m_currentFrameIndex;
     bool m_isFrameStarted = false;
+
+    glm::vec4 m_clearColor{ 0, 0, 0, 1 };
 };

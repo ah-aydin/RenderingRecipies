@@ -169,7 +169,7 @@ void VulkanSwapchain::init()
         VkExtent2D swapChainExtent = getSwapChainExtent();
 
         m_depthImages.resize(imageCount());
-        m_depthImageMemorys.resize(imageCount());
+        m_depthImageMemories.resize(imageCount());
         m_depthImageViews.resize(imageCount());
 
         for (int i = 0; i < m_depthImages.size(); i++)
@@ -190,7 +190,7 @@ void VulkanSwapchain::init()
             imageInfo.sharingMode = VK_SHARING_MODE_EXCLUSIVE;
             imageInfo.flags = 0;
 
-            m_context->createImageWithInfo(imageInfo, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, m_depthImages[i], m_depthImageMemorys[i]);
+            m_context->createImageWithInfo(imageInfo, VK_MEMORY_PROPERTY_DEVICE_LOCAL_BIT, m_depthImages[i], m_depthImageMemories[i]);
 
             VkImageViewCreateInfo viewInfo{};
             viewInfo.sType = VK_STRUCTURE_TYPE_IMAGE_VIEW_CREATE_INFO;
@@ -271,7 +271,10 @@ VulkanSwapchain::~VulkanSwapchain()
     {
         vkDestroyImageView(m_context->getDevice(), m_depthImageViews[i], nullptr);
         vkDestroyImage(m_context->getDevice(), m_depthImages[i], nullptr);
-        vkFreeMemory(m_context->getDevice(), m_depthImageMemorys[i], nullptr);
+    }
+    for (int i = 0; i < m_depthImageMemories.size(); ++i)
+    {
+        vkFreeMemory(m_context->getDevice(), m_depthImageMemories[i], nullptr);
     }
 
     LOG_INFO("\tDestroying framebuffers");

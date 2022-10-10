@@ -68,6 +68,9 @@ public:
 
     VkPhysicalDeviceProperties m_properties{};
 
+    // Call this function right after the main loop
+    void waitDeviceIdle() { vkDeviceWaitIdle(m_device); }
+
 private:
     // Device and instance
     std::vector<const char*> getRequiredExtensions();

@@ -268,8 +268,6 @@ void VulkanContext::swapBuffers() const
 
 void VulkanContext::terminate()
 {
-    vkDeviceWaitIdle(m_device);
-
     LOG_INFO("Terminating Vulkan context");
 
     LOG_INFO("\tDestroying VkCommandPool");
