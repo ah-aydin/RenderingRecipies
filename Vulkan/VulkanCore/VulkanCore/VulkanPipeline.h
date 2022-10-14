@@ -9,7 +9,8 @@ struct VulkanPipelineConfigInfo {
     VulkanPipelineConfigInfo()
         : viewportInfo({}), inputAssemblyInfo({}), rasterizationInfo({}),
         multisampleInfo({}), colorBlendAttachment({}), colorBlendInfo({}),
-        depthStencilInfo({}), dynamicStateEnables({}), dynamicStateInfo({})
+        depthStencilInfo({}), dynamicStateEnables({}), dynamicStateInfo({}),
+        pushConstantShaderStageFlags(0)
     {}
     VulkanPipelineConfigInfo(const VulkanPipelineConfigInfo&) = delete;
     VulkanPipelineConfigInfo& operator=(const VulkanPipelineConfigInfo&) = delete;
@@ -317,7 +318,6 @@ public:
             vkDestroyBuffer(m_context->getDevice(), m_uniformBuffers[i], nullptr);
             vkFreeMemory(m_context->getDevice(), m_uniformBuffersMemory[i], nullptr);
         }
-
 
         LOG_INFO("\tDestroying shader modules");
         vkDestroyShaderModule(m_context->getDevice(), m_vertShaderModule, nullptr);

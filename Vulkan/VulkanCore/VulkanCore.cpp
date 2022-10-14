@@ -7,3 +7,4 @@
 #include "VulkanCore/VulkanPipeline.h"
 #include "VulkanCore/VulkanContext.h"
 #include "VulkanCore/VulkanRenderer.h"
+#include "VulkanCore/Buffers/VulkanVertexArray.h"
