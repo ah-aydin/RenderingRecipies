@@ -8,6 +8,7 @@
 #include <VulkanCore/Buffers/VulkanVertexArray.h>
 
 #define GLM_FORCE_RADIANS
+#define GLM_FORCE_LEFT_HANDED
 #define GLM_FORCE_DEPTH_ZERO_TO_ONE
 #include <glm/glm.hpp>
 #include <glm/ext/matrix_clip_space.hpp>
@@ -95,7 +96,7 @@ int main()
         0.0f, -0.5f, 0.0f, 0.0f, 0.0f, 1.0f
     };
     std::vector<uint32_t> indices = {
-        0, 1, 2, 
+        0, 1, 2 
     };
     VulkanVertexArray* vertexArray = new VulkanVertexArray(context, vertices, indices);
 
@@ -113,13 +114,14 @@ int main()
                 PerFrameData perFrameData{};
                 perFrameData.view = glm::mat4(1.0f);
                 perFrameData.proj = glm::mat4(1.0f);
-                perFrameData.view = glm::lookAt(glm::vec3(-2.0f, 2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0));
+                perFrameData.view = glm::lookAt(glm::vec3(2.0f, -2.0f, 2.0f), glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(0.0f, 1.0f, 0.0));
                 perFrameData.proj = glm::perspective(glm::radians(45.0f), renderer->getSwapchainAspectRatio(), 0.1f, 100.0f);
+                perFrameData.proj[1][1] *= -1;
                 pipeline->setUniformBuffer(commandBuffer, perFrameData, currentImageIndex);
 
                 PerObjectData perObjectData{};
-                glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
-                model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+                glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(1.5f));
+                //model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
                 perObjectData.model = model;
                 pipeline->setPushContant(commandBuffer, perObjectData);
 

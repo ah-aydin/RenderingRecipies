@@ -149,8 +149,8 @@ int main()
                 pipeline->setUniformBuffer(commandBuffer, perFrameData, currentImageIndex);
 
                 PerObjectData perObjectData{};
-                glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(0.5f));
-                model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
+                glm::mat4 model = glm::scale(glm::mat4(1.0f), glm::vec3(1.5f));
+                model = glm::rotate(model, (float) glfwGetTime(), glm::vec3(0.0f, 1.0f, 0.0f));
                 perObjectData.model = model;
                 pipeline->setPushContant(commandBuffer, perObjectData);
 

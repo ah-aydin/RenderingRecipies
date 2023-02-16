@@ -16,6 +16,6 @@ layout (push_constant) uniform Push {
 
 void main() {
     gl_Position = perFrameData.proj * perFrameData.view * perObjectData.model * vec4(iPos, 1.0);
-    gl_Position = vec4(iPos, 1.0);
+    //gl_Position = vec4(iPos, 1.0);
     oColor = iColor;
 }
